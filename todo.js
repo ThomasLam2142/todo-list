@@ -8,5 +8,5 @@ function ready (){
     
 }
 
-
+//asdasdasdasd
 //document.getElementsByClassName('btn')[0].addEventListener('click',purchaseClicked)
