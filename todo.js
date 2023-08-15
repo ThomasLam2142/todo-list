@@ -1,12 +1,6 @@
-if(document.readyState == 'loading'){
-    document.addEventListener('DOMContentLoaded',ready)
-} else{
-    ready()
+function myFunction(){
+    console.log("button works")
+    let text = document.getElementsByClassName('text-box')[0].value;
+    console.log(text)
 }
 
-function ready (){
-    
-}
-
-//asdasdasdasd43245235235asdasdasd
-//document.getElementsByClassName('btn')[0].addEventListener('click',purchaseClicked)
