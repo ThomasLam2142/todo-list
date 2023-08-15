@@ -8,5 +8,5 @@ function ready (){
     
 }
 
-//asdasdasdasd43245235235
+//asdasdasdasd43245235235asdasdasd
 //document.getElementsByClassName('btn')[0].addEventListener('click',purchaseClicked)
