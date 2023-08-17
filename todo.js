@@ -4,6 +4,8 @@ function myFunction(){
     console.log("button pressed")
     let text = document.getElementsByClassName('text-box')[0].value;
     console.log(text)
+
+    //add text to array
     obj.push(text)
     console.log(obj)
     addElement(obj)
@@ -29,7 +31,7 @@ function addElement(obj) {
   }
 
 function addCheckbox(){
-    console.log("Add Checkbox")
+    //create Checkbox
     const newcheck = document.createElement("INPUT");
     newcheck.setAttribute("type","checkbox");
 
@@ -39,12 +41,13 @@ function addCheckbox(){
 }
 
 function addRemoveButton(obj){
-    console.log("Add Remove Button")
+
+    //create Remove Button
     const newbtn = document.createElement("button");
 
     let objlen = obj.length;
     btnNum = 'btnnum'+ objlen
-
+    //Each button has the right class number
     console.log(btnNum)
 
     //Give remove button classes 
