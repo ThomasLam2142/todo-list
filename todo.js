@@ -8,6 +8,7 @@ function myFunction(){
     console.log(obj)
     addElement(obj)
     addCheckbox()
+    addRemoveButton()
 }
 
 function addElement(obj) {
@@ -36,3 +37,11 @@ function addCheckbox(){
     document.body.insertBefore(newcheck, currentDiv);
 
 }
+
+function addRemoveButton(){
+    console.log("Add Remove Button")
+    const newbtn = document.createElement("button");
+    const currentDiv = document.getElementById("todo-pop");
+    document.body.insertBefore(newbtn, currentDiv);
+}
+
