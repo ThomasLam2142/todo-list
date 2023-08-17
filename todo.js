@@ -8,7 +8,7 @@ function myFunction(){
     console.log(obj)
     addElement(obj)
     addCheckbox()
-    addRemoveButton()
+    addRemoveButton(obj)
 }
 
 function addElement(obj) {
@@ -38,9 +38,22 @@ function addCheckbox(){
 
 }
 
-function addRemoveButton(){
+function addRemoveButton(obj){
     console.log("Add Remove Button")
     const newbtn = document.createElement("button");
+
+    let objlen = obj.length;
+    btnNum = 'btnnum'+ objlen
+
+    console.log(btnNum)
+
+    //Give remove button classes 
+    newbtn.classList.add('removebtn', btnNum)
+
+
+    const newContent = document.createTextNode("Remove");
+    newbtn.appendChild(newContent);
+
     const currentDiv = document.getElementById("todo-pop");
     document.body.insertBefore(newbtn, currentDiv);
 }
