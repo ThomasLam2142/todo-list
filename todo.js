@@ -39,25 +39,31 @@ function addElement(obj) {
 
     const newdiv = document.createElement("div");
     
-    
-    let divNum = "divNum" + objlen;
+    const divNum = "divNum" + objlen;
     console.log(divNum)
     newdiv.setAttribute("id",divNum)
 
-    //newdiv.setAttribute("class",)
     const newli = document.createElement("li");
     const newContent = document.createTextNode(obj[objlen-1]);
 
     const newcheck = document.createElement("INPUT");
     newcheck.setAttribute("type","checkbox");
-  
-    // and give it some content
     
-  
-    // add the text node to the newly created div
+    const newbtn = document.createElement("button");
+    const btnId= "btn" + objlen;
+    newbtn.setAttribute("id",btnId);
+    newbtn.setAttribute("class","removeButton");
+
+    //this is my main problem right now. Cant pass through the param using setAttribute
+    newbtn.setAttribute("onclick",'removeClick()');
+    const removebtnContent = document.createTextNode("Remove");
+    newbtn.appendChild(removebtnContent);
+
+    //APPEND THE EVERYTHING TO THE DIV
     newdiv.appendChild(newli);
     newli.appendChild(newContent);
     newli.appendChild(newcheck);
+    newli.appendChild(newbtn);
   
     // add the newly created element and its content into the DOM
     const currentDiv = document.getElementById("todo-pop");
@@ -66,29 +72,8 @@ function addElement(obj) {
   }
 
 
-function addRemoveButton(obj){
-
-    //create Remove Button
-    const newbtn = document.createElement("button");
-    newbtn.addEventListener('click',removeClick);
-
-    let objlen = obj.length;
-    btnNum = 'btnnum'+ objlen
-    //Each button has the right class number
-    console.log(btnNum)
-
-    //Give remove button classes 
-    newbtn.classList.add('removebtn', btnNum)
-
-
-    const newContent = document.createTextNode("Remove");
-    newbtn.appendChild(newContent);
-
-    const currentDiv = document.getElementById("todo-pop");
-    document.body.insertBefore(newbtn, currentDiv);
-}
-
-
 function removeClick(btnNum){
-    console.log('element clicked 🎉🎉🎉', event);
+    console.log(btnNum);
 }
+
+
