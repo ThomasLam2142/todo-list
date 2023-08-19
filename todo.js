@@ -13,6 +13,17 @@ function myFunction(){
     addRemoveButton(obj)
 }
 
+/*
+    Need to figured out how to nest stuff in div then use remove button to get rid of entire div
+
+    -Maybe start with learning to enable remove button to print in console
+    -then remove any element in the document
+
+*/
+
+
+
+
 function addElement(obj) {
     // create a new div element
     let objlen = obj.length;
