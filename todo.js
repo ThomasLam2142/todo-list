@@ -23,6 +23,7 @@ function addElement(obj) {
 
     const newdiv = document.createElement("div");
     
+    //divNum is Identifier for the Objects
     const divNum = "divNum" + objlen;
     console.log(divNum)
     newdiv.setAttribute("id",divNum)
@@ -37,13 +38,12 @@ function addElement(obj) {
     
     //Create the button
     const newbtn = document.createElement("button");
-    const btnId= "btn" + objlen;
-    //newbtn.setAttribute("id",btnId);
+    
     newbtn.setAttribute("class","removeButton");
     newbtn.classList.add(divNum);
 
     newbtn.addEventListener('click', function () {
-    // Call the handleClick function and pass the button's class as a parameter
+    // Call removeClick function and pass through divNum
     removeClick(newbtn.classList[1]);
     });
 
@@ -68,7 +68,7 @@ function addElement(obj) {
     
   }
 
-
+//Function on Clicking the remove button
 function removeClick(divNum){
     console.log(divNum);
     const element = document.getElementById(divNum);
