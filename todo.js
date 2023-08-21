@@ -2,6 +2,8 @@
 //obj contains the content for the todolist elements
 let obj = [];
 
+
+
 function myFunction(){
     console.log("button pressed")
     let text = document.getElementsByClassName('text-box')[0].value;
@@ -15,24 +17,6 @@ function myFunction(){
 }
 
 
-
-/*
-    Need to figure out how to nest stuff in div then use remove button to get rid of entire div
-
-    -Maybe start with learning to enable remove button to print in console
-    -then remove any element in the document
-
-*/
-
-
-
-
-
-
-
-
-
-
 function addElement(obj) {
     // create a new div element
     let objlen = obj.length;
@@ -43,20 +27,32 @@ function addElement(obj) {
     console.log(divNum)
     newdiv.setAttribute("id",divNum)
 
+    //Create new list element and append the text
     const newli = document.createElement("li");
     const newContent = document.createTextNode(obj[objlen-1]);
-
+    
+    //Create the Checkbox
     const newcheck = document.createElement("INPUT");
     newcheck.setAttribute("type","checkbox");
     
+    //Create the button
     const newbtn = document.createElement("button");
     const btnId= "btn" + objlen;
-    newbtn.setAttribute("id",btnId);
+    //newbtn.setAttribute("id",btnId);
     newbtn.setAttribute("class","removeButton");
+    newbtn.classList.add(divNum);
+
+    newbtn.addEventListener('click', function () {
+    // Call the handleClick function and pass the button's class as a parameter
+    removeClick(newbtn.classList[1]);
+    });
+
+    console.log(newbtn.classList)
+
 
     //this is my main problem right now. Cant pass through the param using setAttribute
     //might be able to us setAtribute ID to get the click function to work.
-    newbtn.setAttribute("onclick",'removeClick()');
+    //newbtn.setAttribute("onclick",'removeClick()');
     const removebtnContent = document.createTextNode("Remove");
     newbtn.appendChild(removebtnContent);
 
@@ -73,8 +69,12 @@ function addElement(obj) {
   }
 
 
-function removeClick(btnNum){
-    console.log(btnNum);
+function removeClick(divNum){
+    console.log(divNum);
+    const element = document.getElementById(divNum);
+    element.remove(); // Removes the div with the 'div-02' id
+
 }
+
 
 
