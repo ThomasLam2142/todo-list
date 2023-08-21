@@ -27,14 +27,17 @@ function addElement(obj) {
     const divNum = "divNum" + objlen;
     console.log(divNum)
     newdiv.setAttribute("id",divNum)
+    newdiv.setAttribute("class","todo-div")
 
     //Create new list element and append the text
     const newli = document.createElement("li");
+    newli.setAttribute("class","listElement")
     const newContent = document.createTextNode(obj[objlen-1]);
     
     //Create the Checkbox
     const newcheck = document.createElement("INPUT");
     newcheck.setAttribute("type","checkbox");
+    newcheck.setAttribute("class","checkboxElement")
     
     //Create the button
     const newbtn = document.createElement("button");
