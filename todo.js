@@ -52,10 +52,6 @@ function addElement(obj) {
 
     console.log(newbtn.classList)
 
-
-    //this is my main problem right now. Cant pass through the param using setAttribute
-    //might be able to us setAtribute ID to get the click function to work.
-    //newbtn.setAttribute("onclick",'removeClick()');
     const removebtnContent = document.createTextNode("Remove");
     newbtn.appendChild(removebtnContent);
 
